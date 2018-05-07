@@ -3,9 +3,9 @@ import mysql from 'mysql';
 let pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
-    user: 'exampleUser',
+    user: 'bloguser',
     password: 'password',
-    database: 'InClassExample'
+    database: 'blog'
 });
 
 async function executeQuery(sql, args = []) {
@@ -72,4 +72,4 @@ function sendQueryToDB(connection, sql, args = []) {
     });
 }
 
-export { row, rows, empty, executeQuery, generatePlaceholders };
+export { row, rows, empty, executeQuery, generatePlaceholders, callProcedure };
